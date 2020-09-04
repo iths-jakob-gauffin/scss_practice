@@ -1,0 +1,87 @@
+@import "./variables";
+
+.Btn {
+    position: relative;
+    z-index: 1;
+    font-size: 1.6rem;
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        border-radius: 10rem;
+        font-size: $defaultFontSize;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+
+        &::after {
+            transform: scale(1.4, 1.8);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        transition: all 0.4s;
+    }
+
+    &--Animated {
+        animation: moveUp 0.8s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+
+    &--White {
+        background-color: white;
+        color: #777;
+
+        &::after {
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            z-index: -1;
+        }
+    }
+}
+
+.Btn-text {
+    &:link,
+    &:visited {
+        font-size: $defaultFontSize;
+        color: $colorPrimary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $colorPrimary;
+        padding: 1rem 3rem;
+        background-color: rgba($colorWhite, 0.75);
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: $colorPrimary;
+        color: $colorWhite;
+        box-shadow: 0 1rem 2rem rgba($colorBlack, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 0.5rem 1rem rgba($colorBlack, 0.15);
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,75 @@
+@import "../../style/variables";
+
+.Stories {
+    // margin: ;
+}
+
+.Story {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    background-color: $colorWhite;
+    padding: 6rem;
+    padding-left: 9rem;
+    color: $colorBlack;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.3);
+    font-size: $defaultFontSize;
+    transform: skewX(-12deg);
+    opacity: 0.8;
+
+    &__Shape {
+        position: relative;
+        overflow: hidden;
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+    }
+
+    &__Img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: all 0.5s;
+    }
+
+    &__Text {
+        transform: skewX(12deg);
+
+        h3 {
+            text-transform: uppercase;
+        }
+    }
+
+    &__Caption {
+        color: $colorWhite;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        display: block;
+        opacity: 0;
+        transition: all 0.5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__Caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__Img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(6px) brightness(70%);
+    }
+}
