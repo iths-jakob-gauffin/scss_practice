@@ -6,7 +6,8 @@ import React from 'react';
 
 import Header from './Header/Header';
 import Stories from "./Stories/Stories";
-import BgVideo from './BgVideo/BgVideo'
+import BgVideo from './BgVideo/BgVideo';
+import Navigation from "./Navigation/Navigation";
 
 import "../style/style.scss";
 import "../style/_button.scss";
@@ -14,6 +15,7 @@ import "../style/_variables.scss";
 
 const App = () => (
     <div className="App__Container">
+        <Navigation></Navigation>
         <Header></Header>
         <div className="row"></div>
         <section className="App__StoriesContainer">
