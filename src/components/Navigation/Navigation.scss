@@ -51,6 +51,7 @@
 
   &__Item{
     margin: 1rem;
+
   }
 
   &__Link{
@@ -78,6 +79,15 @@
       background-position: 100%;
       color: $colorPrimary;
       transform: translateX(1rem);
+    }
+
+    &:target::after{
+      content: "";
+      display: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      background: hotpink;
     }
 
     

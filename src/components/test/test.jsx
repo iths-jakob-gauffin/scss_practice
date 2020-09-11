@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const test = () => {
+import "./Test.scss";
+
+const Test = ({text}) => {
     return (
-        <div>
-            hej du uppdatering dsnkfnksdnkfjskjdnkskjdfkjsk
+        <div className="Test">
+        <div className="Test__Box Test__Box--1">
+            <img src="Images/Jungle/Jungle 2.jpg" alt=""/>
+        </div>
+        <div className="Test__Box Test__Box--2"></div>
+        <div className="Test__Box Test__Box--3"></div>
         </div>
     )
 }
 
-export default test
+export default Test
