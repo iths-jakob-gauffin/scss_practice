@@ -94,10 +94,105 @@
     
   }
 
+  &__ButtonWrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__Button{
     padding: 2rem 4rem;
     font-size: 1.6rem;
     font-weight: bold;
     background-color: white;
+
+    
+    // &--Modal:target .Vimeo__Modal{
+    //   display: block;
+    // }
   }
+
+  // &__Button--Play:target &__Button--Modal{
+  //   background: green;
+  // }
+
+  &__Modal:target{
+    // display: block;
+    opacity: 1;
+    z-index: 200;
+    left: 0;
+
+    // + &__Backdrop{
+    //   // background-color: green;
+    //   position: fixed;
+    //   display: block;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: rgba($color: #000000, $alpha: .8);
+    //   // background-color: green;
+    //   top: 0%;
+    //   left: 0%;
+    //   transition: opacity 1s ease-in-out;
+    //   z-index: 150;
+    //   cursor: default;
+    //   opacity: 1;
+  
+    // }
+  }
+
+  &__Modal{
+    position: fixed;
+    min-height: 100%;
+    width: 300px;
+    top: 0;
+    left: -300px;
+    // background-color: rgba(70, 130, 180, 0.50);
+    background-color: steelblue;
+    // z-index: 50000;
+    // display: none;
+    // opacity: 0;
+    transition: all .3s ease-in-out;
+    z-index: -1;
+  }
+
+  &__Close{
+    font-size: 10rem;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__Backdrop{
+    opacity: 0;
+    // z-index: -1;
+    transition: all .5s ease-in-out;
+    visibility: hidden;
+
+    // .Video__Modal:target + &{
+    //   position: fixed;
+    //   display: block;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: rgba($color: #000000, $alpha: .8);
+    //   top: 0%;
+    //   left: 0%;
+    //   z-index: 150;
+    //   cursor: default;
+    //   opacity: 1;
+    // } 
+  }
+}
+
+.Vimeo__Modal:target + .Vimeo__Backdrop{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .8);
+    top: 0%;
+    left: 0%;
+    z-index: 150;
+    cursor: default;
+    opacity: 1;  
+    visibility: visible;
 }
